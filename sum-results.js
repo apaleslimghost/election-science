@@ -1,20 +1,19 @@
-var mergeWith = require('lodash.mergewith');
 var mapValues = require('lodash.mapvalues');
 var groupBy = require('lodash.groupby');
 var add = require('lodash.add');
 var map = require('lodash.map');
 var some = require('lodash.some');
+var compose = require('lodash.compose');
+var property = require('lodash.property');
+var iteratee = require('lodash.iteratee');
 
-function sumResults(resultA, resultB) {
-	if(some(resultB, isNaN)) throw new Error('nan');
-	return mergeWith(resultA, resultB, add);
-}
+var sumResult = require('./sum-result');
 
-module.exports = function sumAllResults(results, getResults, keyKey, valueKey) {
+module.exports = function sumResults(results, getResults, getKey, getValue) {
 	return map(results, r =>
 		mapValues(
-			groupBy(getResults(r), keyKey),
-			'[0]' + valueKey
+			groupBy(getResults(r), getKey),
+			compose(iteratee(getValue), property('0'))
 		)
-	).reduce(sumResults, {});
+	).reduce(sumResult, {});
 };

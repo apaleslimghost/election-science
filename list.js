@@ -7,7 +7,7 @@ var euConstituencies = {
 	'West Midlands': 5456,
 	'North West':	6983,
 	'North East': 2606,
-	'Yorkshire and the Humber': 5301,
+	'Yorkshire and The Humber': 5301,
 	'East Midlands': 4481,
 	'Eastern': 5832,
 	'Northern Ireland':	1799,
