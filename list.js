@@ -1,4 +1,3 @@
-var results = require('./results.json');
 var apportion = require('./apportion');
 
 var euConstituencies = {
