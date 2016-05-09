@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "lodash.mapvalues": "^4.3.0",
+    "lodash.sum": "^4.0.2",
+    "lodash.values": "^4.1.0"
+  }
+}
