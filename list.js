@@ -15,4 +15,4 @@ var euConstituencies = {
 	'Wales': 3007,
 };
 
-module.exports = apportion(325, euConstituencies);
+module.exports = apportion(150, euConstituencies);
